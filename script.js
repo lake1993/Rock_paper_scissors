@@ -13,31 +13,31 @@ function playRound(computerSelection,playerSelection) {
                     return "Draw!"
                     break;
                 case (computerSelection == "rock" && playerSelection == "paper"):
-                    return "Paper beats Rock. You Win!";
                     playerScore++;
+                    return "Paper beats Rock. You Win!";
                     break;
                 case (computerSelection == "rock" && playerSelection == "scissors"):
-                    return "Rock beats Scissors! You Lose!";
                     computerScore++;
+                    return "Rock beats Scissors! You Lose!";
                     break;
                 case (computerSelection == "paper" && playerSelection == "rock"):
-                    return "Paper beats Rock! You Lose!";
                     computerScore++;
+                    return "Paper beats Rock! You Lose!";
                     break;
                 case (computerSelection == "paper" && playerSelection == "paper"):
                     return "Draw!";
                     break;
                 case (computerSelection == "paper" && playerSelection == "scissors"):
-                    return "Scissors beats Paper! You Win!";
                     playerScore++;
+                    return "Scissors beats Paper! You Win!";
                     break;
                 case (computerSelection == "scissors" && playerSelection == "rock"):
-                    return "Rock beats Scissors! You Win!";
                     playerScore++;
+                    return "Rock beats Scissors! You Win!";
                     break;
                 case (computerSelection == "scissors" && playerSelection == "paper"):
-                    return "Scissors beats Paper! You Lose!";
                     computerScore++;
+                    return "Scissors beats Paper! You Lose!";
                     break;
                 case (computerSelection == "scissors" && playerSelection == "scissors"):
                     return "Draw!";
@@ -51,7 +51,8 @@ function playRound(computerSelection,playerSelection) {
 
 
 function game () {
-     while (playerScore < 5 || computerScore < 5) {
+     while (playerScore < 5 && computerScore < 5) {
+        const computerSel = computerPlay();
         let playerSel = prompt("Rock, Paper, Scissors?");
         let playerSelLower = playerSel.toLowerCase();
         console.log(playRound(computerSel,playerSelLower));
@@ -60,9 +61,4 @@ function game () {
      }
 
            
-const computerSel = computerPlay();
-
-
-
-
 game();
