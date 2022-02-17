@@ -56,8 +56,17 @@ function game () {
         let playerSel = prompt("Rock, Paper, Scissors?");
         let playerSelLower = playerSel.toLowerCase();
         console.log(playRound(computerSel,playerSelLower));
-        console.log(playerScore, computerScore);
-         }
+        console.log(`Your Score is ${playerScore}.`, `    Computer's Score is ${computerScore}`)
+        
+        }
+
+        if (computerScore == 5) {
+            alert("You Lose!");
+        }
+
+        if (playerScore == 5) {
+            alert("You Win!");
+        }
      }
 
            
